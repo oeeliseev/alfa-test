@@ -20,7 +20,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User read(@PathVariable Integer id) {
+    public User read(@PathVariable int id) {
         return userService.read(id);
     }
 
@@ -30,11 +30,11 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id) {
+    public void delete(@PathVariable int id) {
         userService.delete(id);
     }
 
-    @GetMapping("/{surname}")
+    @GetMapping("/find/{surname}")
     public Collection<User> find(@PathVariable String surname) {
         return userService.find(surname);
     }

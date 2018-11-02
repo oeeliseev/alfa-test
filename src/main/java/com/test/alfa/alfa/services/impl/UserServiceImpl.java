@@ -35,6 +35,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Collection<User> find(String surname) {
-        return userRepository.findBySurname(surname);
+        return userRepository.findBySurnameContainsIgnoreCase(surname);
     }
 }
