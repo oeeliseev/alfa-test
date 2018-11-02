@@ -24,23 +24,18 @@ public class UserController {
         return userService.read(id);
     }
 
-    @PutMapping
-    public User updatePut(@RequestBody User user) {
-        return userService.updatePut(user);
-    }
-
     @PatchMapping
-    public User updatePatch(@RequestBody User user) {
-        return userService.updatePatch(user);
+    public User update(@RequestBody User user) {
+        return userService.update(user);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id){
+    public void delete(@PathVariable Integer id) {
         userService.delete(id);
     }
 
     @GetMapping("/{surname}")
-    public Collection<User> find(@PathVariable String surname){
+    public Collection<User> find(@PathVariable String surname) {
         return userService.find(surname);
     }
 }
