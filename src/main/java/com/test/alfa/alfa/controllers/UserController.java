@@ -5,6 +5,7 @@ import com.test.alfa.alfa.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Collection;
 
 @RestController
@@ -15,7 +16,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public User create(@RequestBody User user) {
+    public User create(@RequestBody @Valid User user) {
         return userService.create(user);
     }
 
@@ -24,8 +25,8 @@ public class UserController {
         return userService.read(id);
     }
 
-    @PatchMapping
-    public User update(@RequestBody User user) {
+    @PutMapping
+    public User update(@RequestBody @Valid User user) {
         return userService.update(user);
     }
 

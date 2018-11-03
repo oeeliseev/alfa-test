@@ -7,7 +7,7 @@ import lombok.experimental.Accessors;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.time.LocalDate;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Data
@@ -17,7 +17,10 @@ public class User {
     @Id
     @GeneratedValue
     private Integer id;
+    @NotBlank
     private String name;
+
     private String surname;
-    private LocalDate dateOfBirth;
+
+    private Integer age;
 }

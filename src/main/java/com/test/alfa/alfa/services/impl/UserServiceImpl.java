@@ -1,5 +1,6 @@
 package com.test.alfa.alfa.services.impl;
 
+import com.test.alfa.alfa.exception.NoSuchUserException;
 import com.test.alfa.alfa.models.User;
 import com.test.alfa.alfa.repositories.UserRepository;
 import com.test.alfa.alfa.services.UserService;
@@ -20,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User read(Integer id) {
-        return userRepository.findById(id).orElseThrow(RuntimeException::new);
+        return userRepository.findById(id).orElseThrow(() -> new NoSuchUserException(id));
     }
 
     @Override

@@ -1,10 +1,12 @@
 [
   {
     "name": "Vasya",
-    "surname": "Pupkin"
+    "surname": "Pupkin",
+    "age": 32
   },
   {
-    "name": "Vasya2",
-    "surname": "Pupkin2"
+    "name": "Ivan",
+    "surname": "Ivanov",
+    "age": 64
   }
 ]
