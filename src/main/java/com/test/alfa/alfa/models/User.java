@@ -14,9 +14,11 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class User {
+
     @Id
     @GeneratedValue
     private Integer id;
+
     @NotBlank
     private String name;
 

@@ -36,19 +36,9 @@ public class ExceptionHandlerController {
         return exception;
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ExceptionHandler(value = {MethodArgumentNotValidException.class, MethodArgumentTypeMismatchException.class})
     @ResponseStatus(BAD_REQUEST)
-    public ExceptionSerialize validationException(final Exception e) {
-        ExceptionSerialize exception = new ExceptionSerialize()
-                .setMessage(e.getMessage())
-                .setCode(BAD_REQUEST.value());
-        log.error(exception.getMessage());
-        return exception;
-    }
-
-    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
-    @ResponseStatus(BAD_REQUEST)
-    public ExceptionSerialize methodArgumentTypeMismatchException(final Exception e) {
+    public ExceptionSerialize argumentException(final Exception e) {
         ExceptionSerialize exception = new ExceptionSerialize()
                 .setMessage(e.getMessage())
                 .setCode(BAD_REQUEST.value());
